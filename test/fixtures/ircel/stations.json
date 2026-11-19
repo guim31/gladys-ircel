@@ -1,0 +1,697 @@
+[
+  {
+    "properties": { "id": 1030, "label": "40AL01 - Linkeroever" },
+    "geometry": { "coordinates": [4.38522368445472, 51.236194199911814, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1031, "label": "40AL02 - Beveren" },
+    "geometry": { "coordinates": [4.234832753144063, 51.3045207903535, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1032, "label": "40AL03 - Beveren" },
+    "geometry": { "coordinates": [4.201460395126575, 51.25396488067926, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1033, "label": "40AL04 - Beveren" },
+    "geometry": { "coordinates": [4.293329476940388, 51.29066752675605, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1034, "label": "40AL05 - Beveren" },
+    "geometry": { "coordinates": [4.278889821667832, 51.26311771688298, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1774, "label": "40AT83 - BERENDRECHT" },
+    "geometry": { "coordinates": [4.304988727978888, 51.339802961654435, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1751, "label": "40DU07 - Deurne" },
+    "geometry": { "coordinates": [4.4487499033416125, 51.22638859105295, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1749, "label": "40EG05 - Rieme" },
+    "geometry": { "coordinates": [3.7860846523965344, 51.174053838779045, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1771, "label": "40G100 - Sint-Kruiswinkel" },
+    "geometry": { "coordinates": [3.7762815223006876, 51.145366550422075, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1765, "label": "40GK37 - Genk" },
+    "geometry": { "coordinates": [5.52108748111347, 50.93174971459803, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1784, "label": "40HB81 - Hoboken" },
+    "geometry": { "coordinates": [4.341419202100391, 51.171170022912904, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1059, "label": "40LD02 - Laakdal" },
+    "geometry": { "coordinates": [5.0215459776098434, 51.120384137109035, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1062, "label": "40MN01 - Menen" },
+    "geometry": { "coordinates": [3.109641874498661, 50.79346904432362, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1066, "label": "40OB01 - Oostrozebeke" },
+    "geometry": { "coordinates": [3.3073857993357527, 50.917228441036784, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1157, "label": "40R822 - Antwerpen" },
+    "geometry": { "coordinates": [4.341279992464667, 51.26428978425797, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1163, "label": "40R891 - Antwerpen" },
+    "geometry": { "coordinates": [4.385359826049382, 51.255806644323926, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1164, "label": "40R892 - Kallo" },
+    "geometry": { "coordinates": [4.278889976505927, 51.26303682282425, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1168, "label": "40R897 - Antwerpen" },
+    "geometry": { "coordinates": [4.342104511322139, 51.250106498316484, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1719, "label": "40SA04 - Hoevenen" },
+    "geometry": { "coordinates": [4.403868139749611, 51.31392889415411, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1764, "label": "40SZ05 - Steenokkerzeel" },
+    "geometry": { "coordinates": [4.515181795705702, 50.91664840536987, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1095, "label": "40WZ02 - Mol" },
+    "geometry": { "coordinates": [5.221534079093101, 51.19280033320611, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1768, "label": "40ZB07 - Zeebrugge" },
+    "geometry": { "coordinates": [3.2182131043832767, 51.32178391496573, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1770, "label": "40ZB08 - Zeebrugge (Evendijk-Oost)" },
+    "geometry": { "coordinates": [3.2126048989527134, 51.330403831650834, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1777, "label": "40ZB12 - Zeebrugge" },
+    "geometry": { "coordinates": [3.225173351241854, 51.34621153958232, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1107, "label": "40ZL01 - Zelzate" },
+    "geometry": { "coordinates": [3.8084003239516555, 51.20314142608172, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1109, "label": "41B001 - Arts-Loi" },
+    "geometry": { "coordinates": [4.3686812234614925, 50.84571510093847, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1110, "label": "41B004 - Bruxelles (Sainte-Catherine)" },
+    "geometry": { "coordinates": [4.348587474273884, 50.85081053680487, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1112, "label": "41B006 - Bruxelles (Parlement UE)" },
+    "geometry": { "coordinates": [4.374388283352737, 50.838631187644204, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1711, "label": "41B008 - Brussel (Beliardstraat)" },
+    "geometry": { "coordinates": [4.376149069749031, 50.84078856651022, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1113, "label": "41B011 - Berchem-Sainte-Agathe" },
+    "geometry": { "coordinates": [4.288336366305907, 50.85803059328695, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1750, "label": "41BUL1 - Brussel (Bld du Midi)" },
+    "geometry": { "coordinates": [4.341821001555247, 50.83790925921179, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1742, "label": "41CHA1 - Brussel (Ganshoren)" },
+    "geometry": { "coordinates": [4.306158790881908, 50.87036591661661, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1116, "label": "41MEU1 - Meudon" },
+    "geometry": { "coordinates": [4.392717697566157, 50.89510056204227, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1117, "label": "41N043 - Haren" },
+    "geometry": { "coordinates": [4.382963251802339, 50.883559811392246, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1118, "label": "41R001 - Molenbeek-Saint-Jean" },
+    "geometry": { "coordinates": [4.333819707712015, 50.84966548807807, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1119, "label": "41R002 - Ixelles" },
+    "geometry": { "coordinates": [4.384718841699584, 50.82512787296725, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1122, "label": "41R012 - Uccle" },
+    "geometry": { "coordinates": [4.35853885635168, 50.79663163850808, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1741, "label": "41REG1 - Brussel (Bld du Régent)" },
+    "geometry": { "coordinates": [4.367005785367071, 50.84356660320536, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1754, "label": "41VBX1 - Brussel (Rue de Grand Ile)" },
+    "geometry": { "coordinates": [4.346090383271138, 50.84608161436712, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1755, "label": "41VBX2 - Brussel (Rue des Tanneurs)" },
+    "geometry": { "coordinates": [4.346831357738303, 50.84028350970512, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1756, "label": "41VBX3 - Brussel (Rue de Laeken)" },
+    "geometry": { "coordinates": [4.352448633491195, 50.855018198798675, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1747, "label": "42AL09 - Antwerpen (Van Averbekelaan)" },
+    "geometry": { "coordinates": [4.376531512921884, 51.229813418165854, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1748, "label": "42AL10 - Antwerpen (Blancefloerlaan)" },
+    "geometry": { "coordinates": [4.3684571947561315, 51.219890558055965, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1738, "label": "42BO01 - Bonheiden" },
+    "geometry": { "coordinates": [4.516483717002175, 51.02706104656713, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1731, "label": "42HH08 - Houthalen-Helchteren" },
+    "geometry": { "coordinates": [5.376386684238973, 51.03160178513363, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1127, "label": "42M802 - Antwerpen" },
+    "geometry": { "coordinates": [4.4243990069353325, 51.26098970747638, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1757, "label": "42MK02 - Merksem" },
+    "geometry": { "coordinates": [4.4275229343335125, 51.250507862517495, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1132, "label": "42N016 - Dessel" },
+    "geometry": { "coordinates": [5.163978846331762, 51.23365220617172, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1136, "label": "42N027 - Bree" },
+    "geometry": { "coordinates": [5.606659219704477, 51.133716696022546, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1137, "label": "42N035 - Aarschot" },
+    "geometry": { "coordinates": [4.8376180156986175, 50.97754137812405, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1138, "label": "42N040 - Sint-Pieters-Leeuw (3m)" },
+    "geometry": { "coordinates": [4.225194246746714, 50.768137513265515, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1141, "label": "42N046 - Gellik" },
+    "geometry": { "coordinates": [5.618873985239516, 50.88229882583798, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1734, "label": "42N047 - Hasselt" },
+    "geometry": { "coordinates": [5.3543602899799065, 50.93618938186372, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1142, "label": "42N054 - Walshoutem" },
+    "geometry": { "coordinates": [5.103158609453961, 50.71170609374386, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1739, "label": "42OT02 - Oud-Turnhout" },
+    "geometry": { "coordinates": [5.011792691852894, 51.34654782559114, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1143, "label": "42R010 - Sint-Stevens-Woluwe" },
+    "geometry": { "coordinates": [4.428427283561211, 50.86510788345472, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1146, "label": "42R020 - Vilvoorde" },
+    "geometry": { "coordinates": [4.43672076353407, 50.94138711460382, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1147, "label": "42R801 - Borgerhout" },
+    "geometry": { "coordinates": [4.431821046968846, 51.2096625309194, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1148, "label": "42R802 - Borgerhout" },
+    "geometry": { "coordinates": [4.431792230792443, 51.209518731592865, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1720, "label": "42R803 - Antwerpen (Park Spoor Noord)" },
+    "geometry": { "coordinates": [4.428454177535568, 51.22862981307309, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1723, "label": "42R804 - Antwerpen (Ring)" },
+    "geometry": { "coordinates": [4.441947090848596, 51.20630394866412, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1713, "label": "42R805 - Antwerpen (Belgiëlei)" },
+    "geometry": { "coordinates": [4.421559251065276, 51.208229471826584, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1737, "label": "42R806 - Maerlant" },
+    "geometry": { "coordinates": [4.417539976113199, 51.223286803052986, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1149, "label": "42R811 - Schoten" },
+    "geometry": { "coordinates": [4.491362027935445, 51.252103411854065, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1721, "label": "42R817 - Antwerpen (Groenenborgerlaan)" },
+    "geometry": { "coordinates": [4.417948637777736, 51.177130887803195, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1727, "label": "42R818 - Antwerpen (Burchtse Weel)" },
+    "geometry": { "coordinates": [4.350554534328847, 51.212258108549484, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1743, "label": "42R823 - Beveren" },
+    "geometry": { "coordinates": [4.239930592809776, 51.2132506042203, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1158, "label": "42R830 - Doel" },
+    "geometry": { "coordinates": [4.26263372958256, 51.31822863029127, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1159, "label": "42R831 - Berendrecht" },
+    "geometry": { "coordinates": [4.339709947119869, 51.34879529194129, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1710, "label": "42R834 - Boom" },
+    "geometry": { "coordinates": [4.380103544882496, 51.092000037514026, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1744, "label": "42R842 - Mechelen (Hendrik Speecqvest)" },
+    "geometry": { "coordinates": [4.4832553341975006, 51.02037444432797, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1785, "label": "42WW03 - Wuustwezel" },
+    "geometry": { "coordinates": [4.546271556566638, 51.35954013077786, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1170, "label": "43H201 - Liège" },
+    "geometry": { "coordinates": [5.547464182570822, 50.62499156890856, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1171, "label": "43M204 - Angleur" },
+    "geometry": { "coordinates": [5.611149762819444, 50.61192270656379, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1173, "label": "43N060 - Havinnes" },
+    "geometry": { "coordinates": [3.4576244271817274, 50.616718401804356, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1174, "label": "43N063 - Corroy-Le-Grand" },
+    "geometry": { "coordinates": [4.668287682824639, 50.65543910341089, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1769, "label": "43N064 - Rixensart" },
+    "geometry": { "coordinates": [4.494362377317611, 50.72088837561401, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1176, "label": "43N066 - Eupen" },
+    "geometry": { "coordinates": [6.002328686936972, 50.628860259828265, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1177, "label": "43N067 - Membach" },
+    "geometry": { "coordinates": [5.992752719187064, 50.612277528144475, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1178, "label": "43N070 - Mons" },
+    "geometry": { "coordinates": [3.939714325523837, 50.465192156437624, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1179, "label": "43N073 - Vezin" },
+    "geometry": { "coordinates": [4.988422954092523, 50.5027163410533, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1180, "label": "43N085 - Vielsalm" },
+    "geometry": { "coordinates": [6.00173628853783, 50.303207828199675, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1181, "label": "43N093 - Sinsin" },
+    "geometry": { "coordinates": [5.235168654774109, 50.274477510960764, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1182, "label": "43N100 - Dourbes" },
+    "geometry": { "coordinates": [4.594762762155878, 50.09568343420251, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1183, "label": "43N113 - Sainte-Ode" },
+    "geometry": { "coordinates": [5.593016914066448, 50.02702901735947, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1184, "label": "43N121 - Offagne" },
+    "geometry": { "coordinates": [5.202387466800067, 49.877128491341296, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1185, "label": "43N132 - Habay-La-Neuve" },
+    "geometry": { "coordinates": [5.630397740609148, 49.71928118789338, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1740, "label": "43R202 - Liège (Av M Destenay)" },
+    "geometry": { "coordinates": [5.571781423606144, 50.6379783110154, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1190, "label": "43R221 - Herstal" },
+    "geometry": { "coordinates": [5.627835290852661, 50.65844441679701, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1191, "label": "43R222 - Liège (ISSeP)" },
+    "geometry": { "coordinates": [5.570222814112586, 50.61341250149243, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1192, "label": "43R223 - Jemeppe" },
+    "geometry": { "coordinates": [5.516404755143002, 50.62067087884974, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1195, "label": "43R240 - Engis" },
+    "geometry": { "coordinates": [5.397446050127335, 50.5836143473792, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1733, "label": "43R401 - Namur" },
+    "geometry": { "coordinates": [4.8652609460116505, 50.462427939615374, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1782, "label": "44EG08- Evergem" },
+    "geometry": { "coordinates": [3.7264214070026807, 51.119370481749236, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1198, "label": "44M705 - Roeselare" },
+    "geometry": { "coordinates": [3.152401590470009, 50.945359241360336, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1200, "label": "44N012 - Moerkerke" },
+    "geometry": { "coordinates": [3.3625358887015997, 51.25457362244575, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1202, "label": "44N029 - Houtem" },
+    "geometry": { "coordinates": [2.5823227814897383, 51.01628011114775, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1206, "label": "44N052 - Zwevegem" },
+    "geometry": { "coordinates": [3.3224943190372738, 50.81487386992992, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1207, "label": "44R701 - Gent" },
+    "geometry": { "coordinates": [3.729253787364104, 51.058448335958275, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1715, "label": "44R702 - Gent (G. Callierlaan)" },
+    "geometry": { "coordinates": [3.7349714796853077, 51.040689419437186, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1732, "label": "44R703 - Gent (Lange Violettestraat)" },
+    "geometry": { "coordinates": [3.7342745481318294, 51.0468792953966, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1208, "label": "44R710 - Destelbergen" },
+    "geometry": { "coordinates": [3.7752623896453597, 51.06127769766429, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1212, "label": "44R731 - Evergem" },
+    "geometry": { "coordinates": [3.7395042204419253, 51.12469051190952, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1213, "label": "44R740 - Sint-Kruiswinkel" },
+    "geometry": { "coordinates": [3.808735430412742, 51.15013609001028, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1214, "label": "44R750 - Zelzate" },
+    "geometry": { "coordinates": [3.822920046804334, 51.19606326850875, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1070, "label": "44RL01 - Roeselare" },
+    "geometry": { "coordinates": [3.12115559890124, 50.953177280248504, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1783, "label": "44WG06 - Wondelgem" },
+    "geometry": { "coordinates": [3.7148524423845566, 51.09995344068934, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1217, "label": "45R501 - Charleroi" },
+    "geometry": { "coordinates": [4.45217178104986, 50.40931145202578, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1218, "label": "45R502 - Lodelinsart" },
+    "geometry": { "coordinates": [4.4586808580217205, 50.428995392907034, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1775, "label": "45R503 - CHARLEROI" },
+    "geometry": { "coordinates": [4.448485638220131, 50.40918819684482, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1219, "label": "45R510 - Châtelineau" },
+    "geometry": { "coordinates": [4.521130208130447, 50.41643335954891, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1220, "label": "45R511 - Marcinelle" },
+    "geometry": { "coordinates": [4.4247004504024705, 50.37759210213904, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1221, "label": "45R512 - Marchienne" },
+    "geometry": { "coordinates": [4.39589711703924, 50.40781019942755, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1231, "label": "47E007 - Sint-Pieters-Leeuw" },
+    "geometry": { "coordinates": [4.252628452872861, 50.795298626698255, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1232, "label": "47E008 - Grimbergen" },
+    "geometry": { "coordinates": [4.39592001413703, 50.926095116101855, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1233, "label": "47E009 - Zemst" },
+    "geometry": { "coordinates": [4.435416984927747, 50.954916687944355, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1234, "label": "47E013 - Vorst" },
+    "geometry": { "coordinates": [4.328384665101026, 50.81170089403083, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1237, "label": "47E703 - Oosteeklo" },
+    "geometry": { "coordinates": [3.6872957563519884, 51.19031704158201, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1722, "label": "47E704 - Wachtebeke" },
+    "geometry": { "coordinates": [3.8699281727522092, 51.1761001040769, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1239, "label": "47E714 - Dudzele" },
+    "geometry": { "coordinates": [3.2486240629411927, 51.278963303566805, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1240, "label": "47E715 - Zuienkerke" },
+    "geometry": { "coordinates": [3.174984201680885, 51.24586421668521, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1241, "label": "47E716 - Mariakerke" },
+    "geometry": { "coordinates": [3.6828130172031237, 51.0669879015313, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1716, "label": "47E814 - Ham" },
+    "geometry": { "coordinates": [5.129718074812029, 51.08218722352372, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1776, "label": "48R215 - HERMALLE-S-ARGENTEAU" },
+    "geometry": { "coordinates": [5.690153102242605, 50.727968596493334, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1767, "label": "48R236 - Liège Aeroport 2" },
+    "geometry": { "coordinates": [5.417128324921354, 50.61909700947789, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1766, "label": "48R237 - Liège Aeroport 1" },
+    "geometry": { "coordinates": [5.470383864868791, 50.65381476014403, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1752, "label": "48R515 - Charleroi Aeroport 1" },
+    "geometry": { "coordinates": [4.425464746587249, 50.451600180554884, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1753, "label": "48R516 - Charleroi Aeroport 2" },
+    "geometry": { "coordinates": [4.484957959246505, 50.4691316038848, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1758, "label": "FLM3M1 - Antwerpen (3M - Fence Line N)" },
+    "geometry": { "coordinates": [4.333111995955614, 51.23587000240958, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1759, "label": "FLM3M2 - Antwerpen (3M - Fence Line O)" },
+    "geometry": { "coordinates": [4.339134995953735, 51.23205000241137, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1760, "label": "FLM3M3 - Antwerpen (3M - Fence Line ZO)" },
+    "geometry": { "coordinates": [4.340935995952991, 51.229160002412385, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1761, "label": "FLM3M4 - Antwerpen (3M - Fence Line Z)" },
+    "geometry": { "coordinates": [4.335159995954423, 51.22927000241172, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1762, "label": "FLM3M5 - Antwerpen (3M - Fence Line ZW)" },
+    "geometry": { "coordinates": [4.329619995955882, 51.230220002410825, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1763, "label": "FLM3M6 - Antwerpen (3M - Fence Line W)" },
+    "geometry": { "coordinates": [4.326683995956853, 51.232600002409825, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1725, "label": "T2H801 - Zwijndrecht" },
+    "geometry": { "coordinates": [4.3339598080284425, 51.24374071880898, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1781, "label": "TOP3M1 -Antwerpen (Neerstraat)" },
+    "geometry": { "coordinates": [4.331839321419896, 51.226707190859536, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1780, "label": "TOP3M2 -Antwerpen (Vlietstraat)" },
+    "geometry": { "coordinates": [4.336336073188755, 51.2240299479812, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1779, "label": "TOP3M3 -Antwerpen (Graanmolenstraat)" },
+    "geometry": { "coordinates": [4.3305092948498025, 51.22512482295276, "NaN"], "type": "Point" },
+    "type": "Feature"
+  },
+  {
+    "properties": { "id": 1778, "label": "TOP3M4 -Antwerpen (3M - Fence Line ZO)" },
+    "geometry": { "coordinates": [4.3409422735096, 51.229163451370844, "NaN"], "type": "Point" },
+    "type": "Feature"
+  }
+]

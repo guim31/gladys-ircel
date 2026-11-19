@@ -1,61 +1,163 @@
-# Demo Devices Template
+# IRCEL-CELINE
 
-This is the user documentation of the integration. Gladys re-hosts this file
-and shows a permanent **Documentation** link to it in the Configuration screen
-(in the user's language, with English as the fallback) — it is when
-configuring that the user needs it most. Keep the short onboarding hints in
-the `section` blocks of the manifest `config_schema`; put the long
-step-by-step (screenshots, troubleshooting…) here.
+The air quality measured by the official Belgian stations of
+[IRCEL-CELINE](https://www.irceline.be), the Belgian Interregional Environment
+Agency: the BelAQI index and the pollutants, station by station, hour by hour.
 
-## What you get
+Not affiliated with IRCEL-CELINE. The data come from its open API
+(`geo.irceline.be`), used as IRCEL-CELINE publishes it, under the
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
-Six demo devices show up after installation: a weather station (real data
-from Open-Meteo), a switch, a dimmable light, a smart plug with power
-metering, a motion sensor and a camera.
+## What it does
+
+- Reads the IRCEL-CELINE stations you choose (10 at most), with no account and
+  no key.
+- Creates **one device per station**: the BelAQI index (1 to 10) and its level
+  as a word, the pollutants the station measures (PM2.5, PM10, PM1, NO₂, O₃,
+  SO₂, CO, black carbon, benzene) and the age of the data.
+- Adds an **IRCEL air quality** dashboard widget, two scene triggers (**air
+  quality degraded**, **back to normal**) and a scene action **Get the air
+  quality**.
+- Finds a station by its name or code, or the nearest ones to your house.
+
+Read only: the integration only reads public data.
+
+## Requirements
+
+- Gladys Assistant 5.3.0 or later.
+- Internet access from Gladys to `geo.irceline.be`.
+- To search around your house: its location, in **Settings → Houses**.
 
 ## Configuration
 
-1. Open the **Configuration** tab of the integration.
-2. Set the **latitude** and **longitude** the demo weather station should
-   observe (they default to Paris), and pick your temperature unit.
-   The **refresh interval** sets how often the weather station and the
-   plug's power are read: every 5 minutes by default, every minute at most.
-3. Save: the devices appear in the **Discovery** tab, ready to be added.
+### Choose the stations
 
-The **Prefer the local connection** toggle drives the demo plug: it reports
-the channel it actually uses as a badge (local or cloud), with an orange dot
-when it runs degraded (local refused, cloud fallback).
+1. Open the integration's **Configuration** tab.
+2. Click **Find a station**: type a name or a code (`Gent`, `Liege`: accents
+   are optional; `44R701`), or leave it empty to list the stations nearest to
+   your house, with their distance.
+3. Copy the numbers you want into **Stations**, separated by commas: for
+   example `1207, 1711`. Save.
+4. In the **Discovery** tab, add the stations to Gladys.
 
-## Actions
+The [map of the stations](https://irceline.be/en/air-quality/measurements/monitoring-stations/interactive-viewer)
+shows them all.
 
-- **Test the weather provider** — performs a live request to Open-Meteo and
-  shows the current temperature and humidity under the button.
-- **Identify a device** — pick one of your devices in the list and it will
-  signal itself (the demo light "blinks" in the logs).
+### Other settings
+
+- **Refresh**: every 30 minutes (default) or every hour. IRCEL-CELINE
+  publishes hourly means, about an hour after each hour: reading more often
+  would bring nothing.
+- **Language**: language of the feature names (set when a device is added, so
+  choose it first) and of the scene texts. French by default.
+
+The **Check the stations** button reads every station now and tells what each
+one answers.
+
+## Devices
+
+One device per station, named `IRCEL <station> (<code>)`.
+
+| Feature                                      | Values                                    |
+| -------------------------------------------- | ----------------------------------------- |
+| BelAQI index                                 | 1 to 10 (below)                           |
+| Air quality                                  | the level as a word, in your language     |
+| PM2.5, PM10, PM1, NO₂, O₃, SO₂, CO, BC, C₆H₆ | µg/m³, hourly mean                        |
+| Measurement age                              | minutes since the hour of the latest data |
+
+Only the pollutants the station measures today are created (a series stopped
+for more than 30 days is left out). PM1, black carbon, CO and benzene have no
+dedicated type in Gladys in µg/m³: they appear as plain values, named by their
+formula. CO, published by IRCEL-CELINE in mg/m³, is converted to µg/m³.
+
+The **BelAQI** index has ten levels: 1 Excellent, 2 Very good, 3 Good, 4 Fairly
+good, 5 Moderate, 6 Poor, 7 Very poor, 8 Bad, 9 Very bad, 10 Horrible.
+IRCEL-CELINE publishes no index per station in its API: the integration
+computes it from the hourly means of PM10, PM2.5, O₃ and NO₂, with the official
+grid for the current air quality (BelAQI of November 2022, hourly
+concentrations); the worst pollutant sets it. A station measuring only some of
+them (NO₂ alone, for example) gets the index of those. It may differ slightly
+from the index of the irceline.be map, which is interpolated.
+
+A value older than 3 hours is no longer published as current, nor counted in
+the index: Gladys keeps the last one with its date, and the widget says the
+data are outdated.
+
+## Widget
+
+**IRCEL air quality**:
+
+- with a station chosen: up to four pollutant tiles (PM2.5, PM10, NO₂, O₃
+  first), the BelAQI level colored (green, orange, red) and the age of the
+  data;
+- without: one row per station, its level colored.
 
 ## Scenes
 
-The integration adds its own cards to the scene editor (Gladys 5.1 or
-later), under the **Integrations** category:
+### Trigger: IRCEL: air quality degraded
 
-- **Motion detected** (trigger) — starts the scene when a demo motion sensor
-  sees something move. Optionally pick the sensor and what moved (person,
-  animal); left empty, any detection matches. The following actions can
-  read what moved with `{{triggerEvent.data.target}}`.
-- **Identify a device** (action) — makes the chosen device signal itself.
-  It returns whether the device could signal itself, so the following
-  actions can depend on it.
+Fires when the BelAQI of a station rises to **Moderate** (5) or worse, or gets
+worse again (Moderate then Bad fires twice). Filters: the station, and the
+**new level**: tick the levels from your threshold up (for example Bad, Very
+bad and Horrible). Information for the actions: station name, level, its
+index, the previous index, the pollutant that sets the level, a ready-made
+summary.
 
-## Dashboard
+### Trigger: IRCEL: air quality back to normal
 
-Add the **Demo status** widget to a dashboard: it shows the live
-temperature of the weather station and the power of the office plug, the
-connection the plug currently uses (orange when degraded) and the observed
-location. Its **Identify the light** button makes the demo light signal
-itself.
+Fires when the BelAQI comes back to **Fairly good** (4) or better after a
+degradation. Filters: the station, and the worst level the degradation reached
+(tick the same levels as above to pair both scenes). Information: the new
+level, the worst level reached, a summary.
+
+The first index read after the installation sets the starting level and fires
+nothing; a restart does not fire the same change twice.
+
+For any other threshold, use the features directly: "the BelAQI index of my
+station goes above 6", "the NO₂ goes above 40 µg/m³".
+
+### Action: IRCEL: get the air quality
+
+The air quality of one station, or of the station with the worst index:
+summary, level, index, pollutant, PM2.5, PM10, NO₂, O₃ and the age of the data,
+for the next actions (a message, a condition).
+
+## Scene examples
+
+- **Close the windows**: trigger _air quality degraded_ with the levels Bad,
+  Very bad and Horrible → send `{{triggerEvent.data.summary}}` and switch the
+  ventilation off.
+- **Air again**: trigger _back to normal_ with the same levels → send "You can
+  open the windows again".
+- **Morning briefing**: at 7:30, action _get the air quality_ without station,
+  then send its summary in the morning message.
+- **Purifier**: when the PM2.5 feature of your station goes above 25 µg/m³,
+  switch the air purifier on.
 
 ## Troubleshooting
 
-The integration logs everything it does: check the integration logs from the
-Gladys UI (or `docker logs` on the host) with `LOG_LEVEL=debug` for the full
-detail.
+- **"No station yet"** on the Configuration screen: type at least one station
+  number in **Stations**.
+- **"not an IRCEL-CELINE station"** in the check: the number is not in the
+  IRCEL-CELINE list; use **Find a station**.
+- **"measures no pollutant read here"** in the check: the station measures none of
+  the pollutants above (a weather mast, NO only...): choose another one.
+- **"The IRCEL-CELINE API does not answer"**: the values are kept and read
+  again at the next refresh. The Logs tab tells the error once, and its end.
+- **BelAQI index without value**: none of PM10, PM2.5, O₃ and NO₂ has a value
+  from the last 3 hours at this station.
+- Details in the integration's **Logs** tab (`LOG_LEVEL=debug` for more).
+
+## Limits
+
+- Hourly means, published by IRCEL-CELINE about an hour after each hour: the
+  values lag by 1 to 2 hours. They are validated later by the regions: a value
+  may still be corrected afterwards.
+- These are measurements, not forecasts.
+- The index is computed by the integration, as described above, not read from
+  IRCEL-CELINE.
+- IRCEL-CELINE publishes no request limit: the integration reads 10 stations at
+  most, one request per station and per refresh, and the station list once a
+  day.
+- The triggers follow the hourly index: an index that hesitates between two
+  levels fires each change.
