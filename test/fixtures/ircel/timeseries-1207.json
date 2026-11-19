@@ -1,0 +1,478 @@
+[
+  {
+    "id": "7080",
+    "label": "Benzene 7080 - Airmotec 1000 - procedure, 44R701 - Gent",
+    "extras": ["license"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1392685200000, "value": 0.235 },
+    "lastValue": { "timestamp": 1438333200000, "value": 0.05 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7080", "label": "7080 - Airmotec 1000 - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7080", "label": "7080 - Airmotec 1000 - procedure" },
+      "phenomenon": { "id": "20", "label": "Benzene" },
+      "category": { "id": "20", "label": "Benzene" }
+    }
+  },
+  {
+    "id": "10602",
+    "label": "Black Carbon 10602 -  - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1349226000000, "value": 0.595 },
+    "lastValue": { "timestamp": 1795114800000, "value": 0.905 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10602", "label": "10602 -  - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "10602", "label": "10602 -  - procedure" },
+      "phenomenon": { "id": "391", "label": "Black Carbon" },
+      "category": { "id": "391", "label": "Black Carbon" }
+    },
+    "statusIntervals": [
+      { "lower": "20.0", "upper": "10000.0", "name": "20 - MAX BC", "color": "#990099" },
+      { "lower": "15.0", "upper": "20.0", "name": "15 - 19.99 BC", "color": "#CC0000" },
+      { "lower": "10.0", "upper": "15.0", "name": "10 - 14.99 BC", "color": "#FF0000" },
+      { "lower": "7.0", "upper": "10.0", "name": "7 - 9.99 BC", "color": "#FF6600" },
+      { "lower": "5.0", "upper": "7.0", "name": "5 - 6.99 BC", "color": "#FFBB00" },
+      { "lower": "4.0", "upper": "5.0", "name": "4 - 4.99 BC", "color": "#FFFF00" },
+      { "lower": "3.0", "upper": "4.0", "name": "3 - 3.99 BC", "color": "#00FF00" },
+      { "lower": "2.0", "upper": "3.0", "name": "2 - 2.99 BC", "color": "#009900" },
+      { "lower": "1.0", "upper": "2.0", "name": "1 - 1.99 BC", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "1.0", "name": "0 - 0.99 BC", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "7071",
+    "label": "Carbon Monoxide 7071 - API300 - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "mg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1338814800000, "value": 0.28 },
+    "lastValue": { "timestamp": 1673247600000, "value": 0.145 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7071", "label": "7071 - API300 - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7071", "label": "7071 - API300 - procedure" },
+      "phenomenon": { "id": "10", "label": "Carbon Monoxide" },
+      "category": { "id": "10", "label": "Carbon Monoxide" }
+    },
+    "statusIntervals": [
+      { "lower": "2000.0", "upper": "100000.0", "name": "2001 - MAX CO", "color": "#990099" },
+      { "lower": "1500.0", "upper": "2000.0", "name": "1501 - 2000 CO", "color": "#CC0000" },
+      { "lower": "1000.0", "upper": "1500.0", "name": "1001 - 1500 CO", "color": "#FF0000" },
+      { "lower": "800.0", "upper": "1000.0", "name": "801 - 1000 CO", "color": "#FF6600" },
+      { "lower": "600.0", "upper": "800.0", "name": "601 - 800 CO", "color": "#FFBB00" },
+      { "lower": "400.0", "upper": "600.0", "name": "401 - 600 CO", "color": "#FFFF00" },
+      { "lower": "300.0", "upper": "400.0", "name": "301 - 400 CO", "color": "#00FF00" },
+      { "lower": "200.0", "upper": "300.0", "name": "201 - 300 CO", "color": "#009900" },
+      { "lower": "100.0", "upper": "200.0", "name": "101 - 200 CO", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "100.0", "name": "0 - 100 CO", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "7074",
+    "label": "Nitrogen dioxide 7074 - THIS 42C - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1293843600000, "value": 50.0 },
+    "lastValue": { "timestamp": 1795114800000, "value": 23.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7074", "label": "7074 - THIS 42C - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7074", "label": "7074 - THIS 42C - procedure" },
+      "phenomenon": { "id": "8", "label": "Nitrogen dioxide" },
+      "category": { "id": "8", "label": "Nitrogen dioxide" }
+    },
+    "statusIntervals": [
+      { "lower": "75.0", "upper": "10000.0", "name": "76 - MAX NO2", "color": "#990099" },
+      { "lower": "60.0", "upper": "75.0", "name": "61 - 75 NO2", "color": "#CC0000" },
+      { "lower": "50.0", "upper": "60.0", "name": "51 - 60 NO2", "color": "#FF0000" },
+      { "lower": "45.0", "upper": "50.0", "name": "46 - 50 NO2", "color": "#FF6600" },
+      { "lower": "40.0", "upper": "45.0", "name": "41 - 45 NO2", "color": "#FFBB00" },
+      { "lower": "30.0", "upper": "40.0", "name": "31 - 40 NO2", "color": "#FFFF00" },
+      { "lower": "20.0", "upper": "30.0", "name": "21 - 30 NO2", "color": "#00FF00" },
+      { "lower": "15.0", "upper": "20.0", "name": "16 - 20 NO2", "color": "#009900" },
+      { "lower": "10.0", "upper": "15.0", "name": "11 - 15 NO2", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "10.0", "name": "0 - 10 NO2", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "7073",
+    "label": "Nitrogen monoxide 7073 - THIS 42C - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1338426000000, "value": 1.0 },
+    "lastValue": { "timestamp": 1707321600000, "value": 1.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7073", "label": "7073 - THIS 42C - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7073", "label": "7073 - THIS 42C - procedure" },
+      "phenomenon": { "id": "38", "label": "Nitrogen monoxide" },
+      "category": { "id": "38", "label": "Nitrogen monoxide" }
+    },
+    "statusIntervals": [
+      { "lower": "300.0", "upper": "10000.0", "name": "301 - MAX NO", "color": "#990099" },
+      { "lower": "250.0", "upper": "300.0", "name": "251 - 300 NO", "color": "#CC0000" },
+      { "lower": "200.0", "upper": "250.0", "name": "201 - 250 NO", "color": "#FF0000" },
+      { "lower": "180.0", "upper": "200.0", "name": "181 - 200 NO", "color": "#FF6600" },
+      { "lower": "150.0", "upper": "180.0", "name": "151 - 180 NO", "color": "#FFBB00" },
+      { "lower": "120.0", "upper": "150.0", "name": "121 - 150 NO", "color": "#FFFF00" },
+      { "lower": "70.0", "upper": "120.0", "name": "71 - 120 NO", "color": "#00FF00" },
+      { "lower": "50.0", "upper": "70.0", "name": "51 - 70 NO", "color": "#009900" },
+      { "lower": "20.0", "upper": "50.0", "name": "21 - 50 NO", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "20.0", "name": "0 - 20 NO", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "7078",
+    "label": "Ozone 7078 - Env. O341M tot 20041114, nu API400E - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1293843600000, "value": 1.0 },
+    "lastValue": { "timestamp": 1795114800000, "value": 47.5 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": {
+        "id": "7078",
+        "label": "7078 - Env. O341M tot 20041114, nu API400E - procedure"
+      },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": {
+        "id": "7078",
+        "label": "7078 - Env. O341M tot 20041114, nu API400E - procedure"
+      },
+      "phenomenon": { "id": "7", "label": "Ozone" },
+      "category": { "id": "7", "label": "Ozone" }
+    },
+    "statusIntervals": [
+      { "lower": "320.0", "upper": "10000.0", "name": "321 - MAX O3", "color": "#990099" },
+      { "lower": "280.0", "upper": "320.0", "name": "281 - 320 O3", "color": "#CC0000" },
+      { "lower": "240.0", "upper": "280.0", "name": "241 - 280 O3", "color": "#FF0000" },
+      { "lower": "180.0", "upper": "240.0", "name": "181 - 240 O3", "color": "#FF6600" },
+      { "lower": "160.0", "upper": "180.0", "name": "161 - 180 O3", "color": "#FFBB00" },
+      { "lower": "120.0", "upper": "160.0", "name": "121 - 160 O3", "color": "#FFFF00" },
+      { "lower": "70.0", "upper": "120.0", "name": "71 - 120 O3", "color": "#00FF00" },
+      { "lower": "50.0", "upper": "70.0", "name": "51 - 70 O3", "color": "#009900" },
+      { "lower": "25.0", "upper": "50.0", "name": "26 - 50 O3", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "25.0", "name": "0 - 25 O3", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "10878",
+    "label": "Particulate Matter < 1 µm 10878 - FIDAS 200 - procedure, 44R701 - Gent",
+    "extras": ["license"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1572397200000, "value": 0.0 },
+    "lastValue": { "timestamp": 1795114800000, "value": 5.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10878", "label": "10878 - FIDAS 200 - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "10878", "label": "10878 - FIDAS 200 - procedure" },
+      "phenomenon": { "id": "6002", "label": "Particulate Matter < 1 µm" },
+      "category": { "id": "6002", "label": "Particulate Matter < 1 µm" }
+    }
+  },
+  {
+    "id": "7086",
+    "label": "Particulate Matter < 10 µm 7086 - FIDAS 200 - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1338426000000, "value": 50.625 },
+    "lastValue": { "timestamp": 1795114800000, "value": 8.3 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7086", "label": "7086 - FIDAS 200 - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7086", "label": "7086 - FIDAS 200 - procedure" },
+      "phenomenon": { "id": "5", "label": "Particulate Matter < 10 µm" },
+      "category": { "id": "5", "label": "Particulate Matter < 10 µm" }
+    },
+    "statusIntervals": [
+      { "lower": "100.0", "upper": "10000.0", "name": "101 - MAX PM10", "color": "#990099" },
+      { "lower": "80.0", "upper": "100.0", "name": "81 - 100 PM10", "color": "#CC0000" },
+      { "lower": "70.0", "upper": "80.0", "name": "71 - 80 PM10", "color": "#FF0000" },
+      { "lower": "60.0", "upper": "70.0", "name": "61 - 70 PM10", "color": "#FF6600" },
+      { "lower": "50.0", "upper": "60.0", "name": "51 - 60 PM10", "color": "#FFBB00" },
+      { "lower": "40.0", "upper": "50.0", "name": "41 - 50 PM10", "color": "#FFFF00" },
+      { "lower": "30.0", "upper": "40.0", "name": "31 - 40 PM10", "color": "#00FF00" },
+      { "lower": "20.0", "upper": "30.0", "name": "21 - 30 PM10", "color": "#009900" },
+      { "lower": "10.0", "upper": "20.0", "name": "11 - 20 PM10", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "10.0", "name": "0 - 10 PM10", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "7087",
+    "label": "Particulate Matter < 2.5 µm 7087 - FIDAS 200 - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1338426000000, "value": 36.27 },
+    "lastValue": { "timestamp": 1795114800000, "value": 5.181 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7087", "label": "7087 - FIDAS 200 - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7087", "label": "7087 - FIDAS 200 - procedure" },
+      "phenomenon": { "id": "6001", "label": "Particulate Matter < 2.5 µm" },
+      "category": { "id": "6001", "label": "Particulate Matter < 2.5 µm" }
+    },
+    "statusIntervals": [
+      { "lower": "75.0", "upper": "10000.0", "name": "75 - MAX PM2.5", "color": "#990099" },
+      { "lower": "60.0", "upper": "75.0", "name": "61 - 75 PM2.5", "color": "#CC0000" },
+      { "lower": "50.0", "upper": "60.0", "name": "51 - 60 PM2.5", "color": "#FF0000" },
+      { "lower": "35.0", "upper": "50.0", "name": "36 - 50 PM2.5", "color": "#FF6600" },
+      { "lower": "20.0", "upper": "35.0", "name": "21 - 35 PM2.5", "color": "#FFBB00" },
+      { "lower": "15.0", "upper": "20.0", "name": "16 - 20 PM2.5", "color": "#FFFF00" },
+      { "lower": "10.0", "upper": "15.0", "name": "11 - 15 PM2.5", "color": "#00FF00" },
+      { "lower": "7.5", "upper": "10.0", "name": "7.6 - 10 PM2.5", "color": "#009900" },
+      { "lower": "3.5", "upper": "7.5", "name": "3.6 - 7.5 PM2.5", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "3.5", "name": "0 - 3.5 PM2.5", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "10796",
+    "label": "Relative Humidity 10796 - Unknown device - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "percent",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1546304400000, "value": 91.0 },
+    "lastValue": { "timestamp": 1611129600000, "value": 85.5 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10796", "label": "10796 - Unknown device - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "10796", "label": "10796 - Unknown device - procedure" },
+      "phenomenon": { "id": "62106", "label": "Relative Humidity" },
+      "category": { "id": "62106", "label": "Relative Humidity" }
+    },
+    "statusIntervals": [
+      { "lower": "95.5", "upper": "999", "name": "95 - 100 RH", "color": "#990099" },
+      { "lower": "90.5", "upper": "95.5", "name": "90 - 95 RH", "color": "#CC0000" },
+      { "lower": "80.5", "upper": "90.5", "name": "80 - 90 RH", "color": "#FF0000" },
+      { "lower": "70.5", "upper": "80.5", "name": "70 - 80 RH", "color": "#FF6600" },
+      { "lower": "60.5", "upper": "70.5", "name": "60 - 70 RH", "color": "#FFBB00" },
+      { "lower": "50.5", "upper": "60.5", "name": "50 - 60 RH", "color": "#FFFF00" },
+      { "lower": "40.5", "upper": "50.5", "name": "40 - 50 RH", "color": "#00FF00" },
+      { "lower": "30.5", "upper": "40.5", "name": "30 - 40 RH", "color": "#009900" },
+      { "lower": "20.5", "upper": "30.5", "name": "20 - 30 RH", "color": "#0099FF" },
+      { "lower": "-5.0", "upper": "20.5", "name": "0 - 20 RH", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "7072",
+    "label": "Sulphur dioxide 7072 - ENVIRONNEMENT AF21M - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1338426000000, "value": 1.0 },
+    "lastValue": { "timestamp": 1578567600000, "value": 0.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "7072", "label": "7072 - ENVIRONNEMENT AF21M - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "7072", "label": "7072 - ENVIRONNEMENT AF21M - procedure" },
+      "phenomenon": { "id": "1", "label": "Sulphur dioxide" },
+      "category": { "id": "1", "label": "Sulphur dioxide" }
+    },
+    "statusIntervals": [
+      { "lower": "750.0", "upper": "10000.0", "name": "751 - MAX SO2", "color": "#990099" },
+      { "lower": "500.0", "upper": "750.0", "name": "501 - 750 SO2", "color": "#CC0000" },
+      { "lower": "250.0", "upper": "500.0", "name": "251 - 500 SO2", "color": "#FF0000" },
+      { "lower": "200.0", "upper": "250.0", "name": "201 - 250 SO2", "color": "#FF6600" },
+      { "lower": "125.0", "upper": "200.0", "name": "126 - 200 SO2", "color": "#FFBB00" },
+      { "lower": "100.0", "upper": "125.0", "name": "101 - 125 SO2", "color": "#FFFF00" },
+      { "lower": "75.0", "upper": "100.0", "name": "76 - 100 SO2", "color": "#00FF00" },
+      { "lower": "50.0", "upper": "75.0", "name": "51 - 75 SO2", "color": "#009900" },
+      { "lower": "25.0", "upper": "50.0", "name": "26 - 50 SO2", "color": "#0099FF" },
+      { "lower": "-5.0", "upper": "25.0", "name": "0 - 25 SO2", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "99908",
+    "label": "Temperature 99908 - Unknown device - procedure, 44R701 - Gent",
+    "extras": ["license", "statusIntervals"],
+    "uom": "C",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1388538000000, "value": 6.6 },
+    "lastValue": { "timestamp": 1611129600000, "value": 8.05 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "99908", "label": "99908 - Unknown device - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "99908", "label": "99908 - Unknown device - procedure" },
+      "phenomenon": { "id": "62101", "label": "Temperature" },
+      "category": { "id": "62101", "label": "Temperature" }
+    },
+    "statusIntervals": [
+      { "lower": "35", "upper": "999", "name": "35 - 999 TT", "color": "#990099" },
+      { "lower": "30", "upper": "35", "name": "30 - 35 TT", "color": "#CC0000" },
+      { "lower": "25", "upper": "30", "name": "25 - 30 TT", "color": "#FF0000" },
+      { "lower": "20", "upper": "25", "name": "20 - 25 TT", "color": "#FF6600" },
+      { "lower": "15", "upper": "20", "name": "15 - 20 TT", "color": "#FFBB00" },
+      { "lower": "10", "upper": "15", "name": "10 - 15 TT", "color": "#FFFF00" },
+      { "lower": "5", "upper": "10", "name": "5 - 10 TT", "color": "#00FF00" },
+      { "lower": "0", "upper": "5", "name": "0 - 5 TT", "color": "#009900" },
+      { "lower": "-5", "upper": "0", "name": "-5 - 0 TT", "color": "#0099FF" },
+      { "lower": "-999.0", "upper": "-5", "name": "-999 - -5 TT", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "99906",
+    "label": "Wind Direction 99906 - Unknown device - procedure, 44R701 - Gent",
+    "extras": ["license"],
+    "uom": "degrees",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1388538000000, "value": 201.0 },
+    "lastValue": { "timestamp": 1611129600000, "value": 195.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "99906", "label": "99906 - Unknown device - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "99906", "label": "99906 - Unknown device - procedure" },
+      "phenomenon": { "id": "61102", "label": "Wind Direction" },
+      "category": { "id": "61102", "label": "Wind Direction" }
+    }
+  },
+  {
+    "id": "99907",
+    "label": "Wind Speed (scalar) 99907 - Unknown device - procedure, 44R701 - Gent",
+    "extras": ["license"],
+    "uom": "m/s",
+    "station": {
+      "properties": { "id": 1207, "label": "44R701 - Gent" },
+      "geometry": {
+        "coordinates": [3.729253787364104, 51.058448335958275, "NaN"],
+        "type": "Point"
+      },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1388538000000, "value": 4.545 },
+    "lastValue": { "timestamp": 1611129600000, "value": 7.8 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "99907", "label": "99907 - Unknown device - procedure" },
+      "feature": { "id": "1207", "label": "44R701 - Gent" },
+      "procedure": { "id": "99907", "label": "99907 - Unknown device - procedure" },
+      "phenomenon": { "id": "61110", "label": "Wind Speed (scalar)" },
+      "category": { "id": "61110", "label": "Wind Speed (scalar)" }
+    }
+  }
+]

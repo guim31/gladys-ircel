@@ -16,8 +16,8 @@ its only runtime dependency. It started from the official JavaScript template.
 ```bash
 npm install
 npm test                                  # node --test, the built-in runner
-node --test test/devices.test.js          # one file
-node --test --test-name-pattern "plug"    # tests whose name matches
+node --test test/app.test.js              # one file
+node --test --test-name-pattern "trigger" # tests whose name matches
 npm run lint                              # ESLint
 npm run format:check                      # Prettier, as the CI runs it
 npm run format                            # Prettier, fix in place
@@ -32,15 +32,23 @@ pushing.
 
 ```
 index.js                          SDK wiring only: handlers registered before connect()
-src/devices/index.js              registry of the device blueprints + dispatch helpers
-src/devices/<type>.js             one device type per file (buildDevice, onPoll, onSetValue...)
-src/scenes.js                     scene action handlers (manifest `scene_actions`)
-src/widgets.js                    dashboard widget handlers (manifest `widgets`)
+src/app.js                        every handler, wired on a Gladys client (real or fake)
+src/api.js                        the IRCEL-CELINE API: the only place that knows its shapes
+src/belaqi.js                     the BelAQI grid (hourly means) and the index computation
+src/catalog.js                    the station list (cached a day), search by name / distance
+src/hub.js                        records of the stations, reads, states, scene triggers
+src/poller.js                     the container's own timer (should_poll: false)
+src/devices.js                    one device per station (buildDevice, feature keys)
+src/actions.js                    Configuration buttons (find a station, check the stations)
+src/scenes.js                     scene action handler (manifest `scene_actions`)
+src/widgets.js                    dashboard widget handler (manifest `widgets`)
+src/i18n.js                       every produced text, in en/fr/de/es
 src/config.js                     DEFAULT_CONFIG (mirrors the manifest defaults) + normalization
-src/weather.js                    example driver (Open-Meteo)
+src/store.js, src/issues.js       /data persistence, failures logged once
 gladys-assistant-integration.json manifest: name, config_schema, actions, image...
-docs/en.md, docs/fr.md            user documentation, re-hosted by Gladys (mandatory)
+docs/{en,fr,de,es}.md             user documentation, re-hosted by Gladys (mandatory)
 test/                             node --test, against the SDK's fake Gladys (integration-sdk/testing)
+test/fixtures/ircel/              real IRCEL answers recorded on 2026-11-19 (1207, 1711, 1030)
 .github/scripts/release.mjs       release helpers (manifest bump, changelog), tested in test/
 ```
 
@@ -52,14 +60,6 @@ test/                             node --test, against the SDK's fake Gladys (in
   devices, their history, scenes and dashboards on them: changing one creates a
   new device and orphans the old one. The same goes for every key users store:
   manifest `config_schema`, `actions`, widget and scene keys, feature keys.
-- **Every feature carries `name`, `min`, `max`, `read_only` and
-  `has_feedback`**, even where they mean nothing: Gladys stores them NOT NULL.
-  `min`/`max` are `0`/`1` for a binary feature, the real range for a numeric
-  one, `0`/`0` for a feature without a range (text, image...). A missing one
-  can pass the publication on a core that does not check it, then fail when
-  the user clicks "Add" (HTTP 422 `t_device_feature.min cannot be null`). The
-  SDK's fake Gladys refuses it on publication, and `test/devices.test.js`
-  checks them.
 - **The container rootfs is read-only.** Write only under `/data`, the one
   writable volume. Never log tokens, passwords or API keys.
 - **Versions belong to the Release workflow** (Actions → Release). Never edit
@@ -78,8 +78,9 @@ test/                             node --test, against the SDK's fake Gladys (in
   `type: "provider"`: 5.1.0). `test/manifest.test.js` ties the manifest to the
   code (defaults, action, scene and widget handlers): change both sides
   together.
-- **User-facing text** is bilingual (English and French): action messages,
-  manifest texts, and `docs/en.md` / `docs/fr.md`, kept in sync.
+- **User-facing text** exists in English, French, German ("du") and Spanish
+  ("usted"): action messages, manifest texts, widget and scene texts, feature
+  names, and `docs/{en,fr,de,es}.md`, kept in sync (`test/i18n.test.js`).
 - **Style.** Prettier formats, ESLint catches mistakes. Comments explain why,
   in English. Tests never touch the network.
 
@@ -259,3 +260,31 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - Docs `en`, `fr`, `de`, `es` avec les mêmes sections.
 - Chauffe, ouverture, sécurité : ne rien rendre pilotable « comme un thermostat » ou par un assistant
   vocal quand une erreur serait dangereuse (leçon d'OctoPrint).
+
+## IRCEL-CELINE (cette intégration)
+
+- **API** `https://geo.irceline.be/sos/api/v1/` (52°North timeseries API devant le SOS d'IRCEL), ouverte, sans
+  clé ; données sous **CC BY 4.0** (page open data d'irceline.be) : citer la source (légende du widget, docs).
+  Aucune limite publiée : une requête par station et par relevé, liste des stations une fois par jour.
+- **Une requête par station** : `/timeseries?station=<id>&expanded=true` rend chaque série avec son phénomène,
+  son unité et `lastValue {timestamp ms UTC, value}`. Sans `expanded`, ni phénomène ni dernière valeur.
+  `/timeseries?expanded=true` sans filtre pèse 1 Mo (686 séries) : à éviter.
+- Phénomènes retenus (id IRCEL) : 6001 PM2.5, 5 PM10, 6002 PM1, 8 NO₂, 7 O₃, 1 SO₂, 10 CO, 391 BC, 20 benzène.
+  **CO en mg/m³** sur la plupart des stations, en µg/m³ sur quelques-unes : tout est converti en µg/m³.
+- **Séries mortes** : IRCEL garde les séries d'instruments retirés (Gent : benzène 2015, CO 2023, SO₂ 2020).
+  Un polluant ne devient fonctionnalité que si sa série a une valeur de moins de 30 jours.
+- `lastValue.value` peut être `null` ; une valeur peut être **négative** (bruit d'analyseur, -5,55 vu) ; une
+  série avait un horodatage **dans le futur** (+4 h) : ramené à « maintenant ».
+- Libellés `"40AL01 - Linkeroever"` (code - nom), parfois sans espace autour du tiret (`"TOP3M1 -Antwerpen"`,
+  `"44EG08- Evergem"`). Noms en doublon (trois « Beveren ») : le nom d'appareil porte le code.
+  Coordonnées GeoJSON `[lon, lat, "NaN"]`.
+- **BelAQI** : l'API ne publie **aucun indice par station** (ni le WFS : seulement des couches de
+  concentrations). Calculé ici avec la grille horaire officielle « current air quality » du BelAQI de
+  novembre 2022 (tableau 2 de la page `belaqi-2022/info_nov2022`), sous-indice par polluant (PM10, PM2.5,
+  O₃, NO₂), le pire l'emporte. Bornes entières (PM2.5 au dixième), valeur arrondie avant comparaison. Les
+  `statusIntervals` des séries suivent encore l'ancienne grille 2017 : ne pas s'en servir.
+- Niveaux 1 à 10, clés `excellent` … `horrible` (`levelKey(level)` : décalage d'un cran). Dégradation dès 5
+  (« moderate »), retour à la normale à ≤ 4.
+- Recherche de station : chaque mot de la requête doit **commencer** un mot du nom ou du code (« gent » ne
+  trouve pas Régent ni Hermalle-sous-Argenteau).
+- Données publiées environ une heure après l'heure (horodatage = début de l'heure) : âge typique 80 min.

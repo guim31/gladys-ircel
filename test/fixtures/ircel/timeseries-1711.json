@@ -1,0 +1,160 @@
+[
+  {
+    "id": "10896",
+    "label": "Benzene 10896 - Airmotec 1000 - procedure, 41B008 - Brussel (Beliardstraat)",
+    "extras": ["license"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1711, "label": "41B008 - Brussel (Beliardstraat)" },
+      "geometry": { "coordinates": [4.376149069749031, 50.84078856651022, "NaN"], "type": "Point" },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1577840400000, "value": 0.8 },
+    "lastValue": { "timestamp": 1795114800000, "value": 0.45 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10896", "label": "10896 - Airmotec 1000 - procedure" },
+      "feature": { "id": "1711", "label": "41B008 - Brussel (Beliardstraat)" },
+      "procedure": { "id": "10896", "label": "10896 - Airmotec 1000 - procedure" },
+      "phenomenon": { "id": "20", "label": "Benzene" },
+      "category": { "id": "20", "label": "Benzene" }
+    }
+  },
+  {
+    "id": "10616",
+    "label": "Carbon Monoxide 10616 - Unknown device - procedure, 41B008 - Brussel (Beliardstraat)",
+    "extras": ["license", "statusIntervals"],
+    "uom": "mg/m³",
+    "station": {
+      "properties": { "id": 1711, "label": "41B008 - Brussel (Beliardstraat)" },
+      "geometry": { "coordinates": [4.376149069749031, 50.84078856651022, "NaN"], "type": "Point" },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1352725200000, "value": 0.505 },
+    "lastValue": { "timestamp": 1795114800000, "value": 0.445 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10616", "label": "10616 - Unknown device - procedure" },
+      "feature": { "id": "1711", "label": "41B008 - Brussel (Beliardstraat)" },
+      "procedure": { "id": "10616", "label": "10616 - Unknown device - procedure" },
+      "phenomenon": { "id": "10", "label": "Carbon Monoxide" },
+      "category": { "id": "10", "label": "Carbon Monoxide" }
+    },
+    "statusIntervals": [
+      { "lower": "2000.0", "upper": "100000.0", "name": "2001 - MAX CO", "color": "#990099" },
+      { "lower": "1500.0", "upper": "2000.0", "name": "1501 - 2000 CO", "color": "#CC0000" },
+      { "lower": "1000.0", "upper": "1500.0", "name": "1001 - 1500 CO", "color": "#FF0000" },
+      { "lower": "800.0", "upper": "1000.0", "name": "801 - 1000 CO", "color": "#FF6600" },
+      { "lower": "600.0", "upper": "800.0", "name": "601 - 800 CO", "color": "#FFBB00" },
+      { "lower": "400.0", "upper": "600.0", "name": "401 - 600 CO", "color": "#FFFF00" },
+      { "lower": "300.0", "upper": "400.0", "name": "301 - 400 CO", "color": "#00FF00" },
+      { "lower": "200.0", "upper": "300.0", "name": "201 - 300 CO", "color": "#009900" },
+      { "lower": "100.0", "upper": "200.0", "name": "101 - 200 CO", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "100.0", "name": "0 - 100 CO", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "10614",
+    "label": "Nitrogen dioxide 10614 - Unknown device - procedure, 41B008 - Brussel (Beliardstraat)",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1711, "label": "41B008 - Brussel (Beliardstraat)" },
+      "geometry": { "coordinates": [4.376149069749031, 50.84078856651022, "NaN"], "type": "Point" },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1352725200000, "value": 73.0 },
+    "lastValue": { "timestamp": 1795114800000, "value": 34.5 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10614", "label": "10614 - Unknown device - procedure" },
+      "feature": { "id": "1711", "label": "41B008 - Brussel (Beliardstraat)" },
+      "procedure": { "id": "10614", "label": "10614 - Unknown device - procedure" },
+      "phenomenon": { "id": "8", "label": "Nitrogen dioxide" },
+      "category": { "id": "8", "label": "Nitrogen dioxide" }
+    },
+    "statusIntervals": [
+      { "lower": "75.0", "upper": "10000.0", "name": "76 - MAX NO2", "color": "#990099" },
+      { "lower": "60.0", "upper": "75.0", "name": "61 - 75 NO2", "color": "#CC0000" },
+      { "lower": "50.0", "upper": "60.0", "name": "51 - 60 NO2", "color": "#FF0000" },
+      { "lower": "45.0", "upper": "50.0", "name": "46 - 50 NO2", "color": "#FF6600" },
+      { "lower": "40.0", "upper": "45.0", "name": "41 - 45 NO2", "color": "#FFBB00" },
+      { "lower": "30.0", "upper": "40.0", "name": "31 - 40 NO2", "color": "#FFFF00" },
+      { "lower": "20.0", "upper": "30.0", "name": "21 - 30 NO2", "color": "#00FF00" },
+      { "lower": "15.0", "upper": "20.0", "name": "16 - 20 NO2", "color": "#009900" },
+      { "lower": "10.0", "upper": "15.0", "name": "11 - 15 NO2", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "10.0", "name": "0 - 10 NO2", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "10613",
+    "label": "Nitrogen monoxide 10613 - Unknown device - procedure, 41B008 - Brussel (Beliardstraat)",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1711, "label": "41B008 - Brussel (Beliardstraat)" },
+      "geometry": { "coordinates": [4.376149069749031, 50.84078856651022, "NaN"], "type": "Point" },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1352725200000, "value": 89.0 },
+    "lastValue": { "timestamp": 1795114800000, "value": 10.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10613", "label": "10613 - Unknown device - procedure" },
+      "feature": { "id": "1711", "label": "41B008 - Brussel (Beliardstraat)" },
+      "procedure": { "id": "10613", "label": "10613 - Unknown device - procedure" },
+      "phenomenon": { "id": "38", "label": "Nitrogen monoxide" },
+      "category": { "id": "38", "label": "Nitrogen monoxide" }
+    },
+    "statusIntervals": [
+      { "lower": "300.0", "upper": "10000.0", "name": "301 - MAX NO", "color": "#990099" },
+      { "lower": "250.0", "upper": "300.0", "name": "251 - 300 NO", "color": "#CC0000" },
+      { "lower": "200.0", "upper": "250.0", "name": "201 - 250 NO", "color": "#FF0000" },
+      { "lower": "180.0", "upper": "200.0", "name": "181 - 200 NO", "color": "#FF6600" },
+      { "lower": "150.0", "upper": "180.0", "name": "151 - 180 NO", "color": "#FFBB00" },
+      { "lower": "120.0", "upper": "150.0", "name": "121 - 150 NO", "color": "#FFFF00" },
+      { "lower": "70.0", "upper": "120.0", "name": "71 - 120 NO", "color": "#00FF00" },
+      { "lower": "50.0", "upper": "70.0", "name": "51 - 70 NO", "color": "#009900" },
+      { "lower": "20.0", "upper": "50.0", "name": "21 - 50 NO", "color": "#0099FF" },
+      { "lower": "-10.0", "upper": "20.0", "name": "0 - 20 NO", "color": "#0000FF" }
+    ]
+  },
+  {
+    "id": "10615",
+    "label": "Sulphur dioxide 10615 - Unknown device - procedure, 41B008 - Brussel (Beliardstraat)",
+    "extras": ["license", "statusIntervals"],
+    "uom": "µg/m³",
+    "station": {
+      "properties": { "id": 1711, "label": "41B008 - Brussel (Beliardstraat)" },
+      "geometry": { "coordinates": [4.376149069749031, 50.84078856651022, "NaN"], "type": "Point" },
+      "type": "Feature"
+    },
+    "referenceValues": [],
+    "firstValue": { "timestamp": 1352725200000, "value": 6.0 },
+    "lastValue": { "timestamp": 1427972400000, "value": 4.0 },
+    "parameters": {
+      "service": { "id": "1", "label": "IRCEL - CELINE: timeseries-api (SOS 2.0)" },
+      "offering": { "id": "10615", "label": "10615 - Unknown device - procedure" },
+      "feature": { "id": "1711", "label": "41B008 - Brussel (Beliardstraat)" },
+      "procedure": { "id": "10615", "label": "10615 - Unknown device - procedure" },
+      "phenomenon": { "id": "1", "label": "Sulphur dioxide" },
+      "category": { "id": "1", "label": "Sulphur dioxide" }
+    },
+    "statusIntervals": [
+      { "lower": "750.0", "upper": "10000.0", "name": "751 - MAX SO2", "color": "#990099" },
+      { "lower": "500.0", "upper": "750.0", "name": "501 - 750 SO2", "color": "#CC0000" },
+      { "lower": "250.0", "upper": "500.0", "name": "251 - 500 SO2", "color": "#FF0000" },
+      { "lower": "200.0", "upper": "250.0", "name": "201 - 250 SO2", "color": "#FF6600" },
+      { "lower": "125.0", "upper": "200.0", "name": "126 - 200 SO2", "color": "#FFBB00" },
+      { "lower": "100.0", "upper": "125.0", "name": "101 - 125 SO2", "color": "#FFFF00" },
+      { "lower": "75.0", "upper": "100.0", "name": "76 - 100 SO2", "color": "#00FF00" },
+      { "lower": "50.0", "upper": "75.0", "name": "51 - 75 SO2", "color": "#009900" },
+      { "lower": "25.0", "upper": "50.0", "name": "26 - 50 SO2", "color": "#0099FF" },
+      { "lower": "-5.0", "upper": "25.0", "name": "0 - 25 SO2", "color": "#0000FF" }
+    ]
+  }
+]
