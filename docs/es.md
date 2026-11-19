@@ -115,7 +115,9 @@ degradación. Filtros: la estación y el peor nivel alcanzado por la degradació
 Información: el nuevo nivel, el peor nivel alcanzado, un resumen.
 
 El primer índice leído tras la instalación fija el nivel de partida y no activa
-nada; un reinicio no activa dos veces el mismo cambio.
+nada; un reinicio no activa dos veces el mismo cambio. Tras una interrupción
+(API o estación sin respuesta durante horas, menos de un día), una degradación
+termina igualmente con su **normal de nuevo**.
 
 Para cualquier otro umbral, use directamente las funciones: «el índice BelAQI
 de mi estación supera 6», «el NO₂ supera 40 µg/m³».

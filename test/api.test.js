@@ -84,8 +84,11 @@ test('errors: unreachable, HTTP error, unreadable answer', async () => {
   network.down = true;
   await assert.rejects(fetchStations(d), (err) => err instanceof ApiError && err.unreachable);
   network.down = false;
+  // A server error is the service down, like no answer; a 404 is one station.
   network.series[GENT] = { status: 503 };
-  await assert.rejects(fetchSeries(GENT, d), (err) => err.status === 503 && !err.unreachable);
+  await assert.rejects(fetchSeries(GENT, d), (err) => err.status === 503 && err.unreachable);
+  network.series[GENT] = { status: 404 };
+  await assert.rejects(fetchSeries(GENT, d), (err) => err.status === 404 && !err.unreachable);
   network.series[GENT] = { odd: true };
   await assert.rejects(fetchSeries(GENT, d), /no series list/);
 });

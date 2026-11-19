@@ -111,7 +111,9 @@ degradation. Filters: the station, and the worst level the degradation reached
 level, the worst level reached, a summary.
 
 The first index read after the installation sets the starting level and fires
-nothing; a restart does not fire the same change twice.
+nothing; a restart does not fire the same change twice. After an outage (API or
+station silent for hours, less than a day), a degradation still ends with its
+**back to normal**.
 
 For any other threshold, use the features directly: "the BelAQI index of my
 station goes above 6", "the NO₂ goes above 40 µg/m³".

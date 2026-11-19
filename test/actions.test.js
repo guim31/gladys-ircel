@@ -45,11 +45,11 @@ test('no name: the nearest stations to the house, with their distance', async ()
   assert.equal(w.network.calls.filter((call) => call === '/stations').length, 1);
 });
 
-test('nothing found: a success, saying so', async () => {
+test('nothing found: a failure, saying so', async () => {
   const w = await createWorld();
   const ack = await w.gladys.fake.action('find_station', { query: 'Paris' });
-  assert.equal(ack.success, true);
-  assert.equal(ack.data.message.fr, "Aucune station d'IRCEL-CELINE pour « Paris ».");
+  assert.equal(ack.success, false);
+  assert.equal(ack.error.fr, "Aucune station d'IRCEL-CELINE pour « Paris ».");
 });
 
 test('no name and no located house: the action fails, saying what to do', async () => {

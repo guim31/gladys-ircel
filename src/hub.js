@@ -58,6 +58,13 @@ const ACTIVE_MS = 30 * 24 * 60 * 60 * 1000;
  */
 const ANNOUNCED_MAX_AGE_MS = 3 * 60 * 60 * 1000;
 
+/**
+ * An ongoing degradation is still closed by "back to normal" after a gap this
+ * long (API or station down a few hours): a scene that switched something off
+ * gets its event to switch it on again.
+ */
+const DEGRADATION_MAX_GAP_MS = 24 * 60 * 60 * 1000;
+
 /** From this level on, the air quality is degraded ("moderate", 5). */
 export const DEGRADED_FROM = 5;
 
@@ -353,7 +360,9 @@ export class Hub {
   applyIndex(record) {
     const index = this.indexOf(record);
     const at = this.indexTime(record);
-    if (!index || at === record.indexAt) {
+    // A new hour, or the same hour completed by a late pollutant (or one
+    // turning stale) that moves the level.
+    if (!index || (at === record.indexAt && index.level === record.announced)) {
       return;
     }
     record.indexAt = at;
@@ -374,7 +383,14 @@ export class Hub {
     const recent =
       typeof record.announcedAt === 'number' &&
       this.now() - record.announcedAt <= ANNOUNCED_MAX_AGE_MS;
-    const previous = recent ? record.announced : null;
+    let previous = recent ? record.announced : null;
+    const degradationOpen =
+      (record.worst ?? 0) >= DEGRADED_FROM &&
+      typeof record.announcedAt === 'number' &&
+      this.now() - record.announcedAt <= DEGRADATION_MAX_GAP_MS;
+    if (previous === null && degradationOpen && level < DEGRADED_FROM) {
+      previous = record.worst;
+    }
     record.announced = level;
     record.announcedAt = this.now();
     if (previous === null || previous === undefined) {
@@ -481,7 +497,7 @@ export class Hub {
     if (event) {
       await this.gladys.publishSceneEvent(event.key, event.data);
       this.pendingEvents.delete(record.id);
-      logger.info(
+      logger.debug(
         `${deviceName(record)}: air quality ${event.data.previous_level} -> ${event.data.level}`,
       );
     }

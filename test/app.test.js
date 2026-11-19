@@ -195,6 +195,55 @@ test('no event for a station not added, nor twice after a restart', async () => 
   assert.equal(discovered(offline, GENT).features.length, 9);
 });
 
+test('a pollutant arriving late in the same hour still moves the triggers', async () => {
+  const w = await createWorld({ config: { stations: GENT, language: 'en' } });
+  await createAll(w);
+  // 21:20: the 20:00 hour without its NO₂ yet: the 19:00 one (23) still counts.
+  const partial = seriesAt(GENT, 1);
+  for (const item of partial) {
+    if (item.parameters.phenomenon.id === '8') {
+      item.lastValue.timestamp -= HOUR;
+    }
+  }
+  w.network.series[GENT] = partial;
+  w.advance(HOUR);
+  await w.app.poller.cycle();
+  assert.equal(w.gladys.fake.lastState(featureId(w, GENT, 'index')), 4);
+  assert.deepEqual(w.gladys.fake.sceneEvents, []);
+  // 21:50: the NO₂ of the 20:00 hour, high: same hour, new level.
+  w.network.series[GENT] = seriesAt(GENT, 1, { no2: 55 });
+  w.advance(HOUR / 2);
+  await w.app.poller.cycle();
+  assert.deepEqual(
+    w.gladys.fake.sceneEvents.map((event) => [event.key, event.data.level]),
+    [['air_quality_degraded', 'bad']],
+  );
+});
+
+test('a degradation is closed by "back to normal" even after an outage', async () => {
+  const w = await createWorld({ config: { stations: GENT, language: 'en' } });
+  await createAll(w);
+  w.network.series[GENT] = seriesAt(GENT, 1, { no2: 55 });
+  w.advance(HOUR);
+  await w.app.poller.cycle();
+  // Five hours without an answer, then a good hour.
+  w.network.down = true;
+  for (let i = 0; i < 5; i += 1) {
+    w.advance(HOUR);
+    await w.app.poller.cycle();
+  }
+  w.network.down = false;
+  w.network.series[GENT] = seriesAt(GENT, 7, { no2: 12 });
+  w.advance(HOUR);
+  await w.app.poller.cycle();
+  const events = w.gladys.fake.sceneEvents;
+  assert.deepEqual(
+    events.map((event) => event.key),
+    ['air_quality_degraded', 'air_quality_back_to_normal'],
+  );
+  assert.equal(events[1].data.worst_level, 'bad');
+});
+
 test('the status: nothing configured, API down and back', async () => {
   const empty = await createWorld();
   assert.deepEqual(empty.gladys.fake.connectionStatus, {
@@ -215,6 +264,11 @@ test('the status: nothing configured, API down and back', async () => {
   w.advance(HOUR);
   await w.app.poller.cycle();
   assert.deepEqual(w.gladys.fake.connectionStatus, { connected: true });
+  // A server error says the same.
+  w.network.series[GENT] = { status: 503 };
+  w.advance(HOUR);
+  await w.app.poller.cycle();
+  assert.deepEqual(w.gladys.fake.connectionStatus.message, TEXT.apiUnreachable);
 });
 
 test('a station unknown to IRCEL gives no device, and the check says why', async () => {
@@ -318,7 +372,7 @@ test('an odd answer for one station spoils that station, not the others nor the 
   const w = await createWorld({
     config: { stations: `${GENT},${BRUSSEL}` },
     setup: (network) => {
-      network.series[BRUSSEL] = { status: 500 };
+      network.series[BRUSSEL] = { status: 404 };
     },
   });
   await createAll(w);

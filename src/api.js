@@ -65,7 +65,11 @@ async function getJson(path, { fetch: fetchImpl = globalThis.fetch } = {}) {
     throw new ApiError(`IRCEL API unreachable (${reason})`, { unreachable: true });
   }
   if (!response.ok) {
-    throw new ApiError(`IRCEL API: HTTP ${response.status}`, { status: response.status });
+    // A server error is the service down for every station, like no answer.
+    throw new ApiError(`IRCEL API: HTTP ${response.status}`, {
+      status: response.status,
+      unreachable: response.status >= 500,
+    });
   }
   try {
     return await response.json();

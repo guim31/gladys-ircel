@@ -51,12 +51,17 @@ export async function findStation(gladys, hub, fields) {
   }
   await hub.save();
   const found = searchStations(stations, { query, origin });
-  return MESSAGES.found({
+  const message = MESSAGES.found({
     query,
     house: houseName,
     stations: found.slice(0, MAX_LISTED),
     more: Math.max(0, found.length - MAX_LISTED),
   });
+  // Nothing found is a failure: shown in red.
+  if (found.length === 0) {
+    throw new ActionFailure(message);
+  }
+  return message;
 }
 
 /**

@@ -118,6 +118,8 @@ scènes). Informations : le nouveau niveau, le pire niveau atteint, un résumé.
 
 Le premier indice lu après l'installation fixe le niveau de départ et ne
 déclenche rien ; un redémarrage ne déclenche pas deux fois le même changement.
+Après une coupure (API ou station muette quelques heures, moins d'un jour), une
+dégradation se termine quand même par son **retour à la normale**.
 
 Pour tout autre seuil, utilisez directement les fonctionnalités : « l'indice
 BelAQI de ma station dépasse 6 », « le NO₂ dépasse 40 µg/m³ ».

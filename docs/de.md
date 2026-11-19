@@ -118,7 +118,9 @@ Informationen: die neue Stufe, die schlechteste erreichte Stufe, eine
 Zusammenfassung.
 
 Der erste Index nach der Installation legt die Ausgangsstufe fest und löst
-nichts aus; ein Neustart löst dieselbe Änderung nicht zweimal aus.
+nichts aus; ein Neustart löst dieselbe Änderung nicht zweimal aus. Nach einem
+Ausfall (API oder Station einige Stunden stumm, weniger als ein Tag) endet eine
+Verschlechterung trotzdem mit ihrem **wieder normal**.
 
 Für jede andere Schwelle nutze direkt die Funktionen: „der BelAQI-Index meiner
 Station steigt über 6“, „das NO₂ steigt über 40 µg/m³“.
