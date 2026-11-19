@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-19
+
 ### Added
 
 - IRCEL-CELINE stations, the official Belgian air quality network, read
@@ -24,4 +26,5 @@ the notes of the version's GitHub Release.
   and "back to normal", scene action "get the air quality".
 - Texts and documentation in English, French, German and Spanish.
 
-[Unreleased]: https://github.com/guim31/gladys-ircel/commits/main
+[Unreleased]: https://github.com/guim31/gladys-ircel/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/guim31/gladys-ircel/releases/tag/v1.0.0
