@@ -264,7 +264,7 @@ test('the status: nothing configured, API down and back', async () => {
   w.advance(HOUR);
   await w.app.poller.cycle();
   assert.deepEqual(w.gladys.fake.connectionStatus, { connected: true });
-  // A server error says the same.
+  // A server error on every station says the same.
   w.network.series[GENT] = { status: 503 };
   w.advance(HOUR);
   await w.app.poller.cycle();
@@ -288,6 +288,21 @@ test('onPoll, should the core call it, reads only a station that is due', async 
   w.advance(HOUR);
   await w.gladys.fake.poll(discovered(w, GENT));
   assert.ok(w.network.calls.length > before);
+});
+
+test('a degradation seen before the device was added is never closed by an event', async () => {
+  const w = await createWorld({
+    config: { stations: GENT },
+    setup: (network) => {
+      network.series[GENT] = seriesAt(GENT, 0, { no2: 42 });
+    },
+  });
+  // Read once for the Discovery tab at level 6; added five hours later, good again.
+  w.advance(5 * HOUR);
+  w.network.series[GENT] = seriesAt(GENT, 5, { no2: 12 });
+  await createAll(w);
+  assert.equal(w.gladys.fake.lastState(featureId(w, GENT, 'index')), 2);
+  assert.deepEqual(w.gladys.fake.sceneEvents, []);
 });
 
 test('a device added days after the configuration fires nothing at once', async () => {
@@ -372,7 +387,7 @@ test('an odd answer for one station spoils that station, not the others nor the 
   const w = await createWorld({
     config: { stations: `${GENT},${BRUSSEL}` },
     setup: (network) => {
-      network.series[BRUSSEL] = { status: 404 };
+      network.series[BRUSSEL] = { status: 500 };
     },
   });
   await createAll(w);

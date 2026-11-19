@@ -295,6 +295,7 @@ export class Hub {
         error: err.message,
         unknown: err.unknown === true,
         empty: err.empty === true,
+        serverError: err instanceof ApiError && err.serverError,
       });
       if (err instanceof ApiError && err.unreachable) {
         // Unreachable: one problem for every station.
@@ -394,7 +395,9 @@ export class Hub {
     record.announced = level;
     record.announcedAt = this.now();
     if (previous === null || previous === undefined) {
-      record.worst = level >= DEGRADED_FROM ? level : null;
+      // A degradation seen before the device exists is no one's to close:
+      // no "back to normal" for it after a gap.
+      record.worst = level >= DEGRADED_FROM && this.isCreated(record) ? level : null;
       return null;
     }
     const language = this.getConfig().language;

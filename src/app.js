@@ -84,7 +84,7 @@ export function registerHandlers(gladys, { store = new Store(), fetch, timers = 
     let status = { connected: true };
     if (hub.units(config).length === 0) {
       status = { connected: false, message: TEXT.notConfigured };
-    } else if (hub.issues.isFailing('api')) {
+    } else if (hub.issues.isFailing('api') || allServerErrors(config)) {
       status = { connected: false, message: TEXT.apiUnreachable };
     }
     const key = JSON.stringify(status);
@@ -92,6 +92,12 @@ export function registerHandlers(gladys, { store = new Store(), fetch, timers = 
       lastStatus = key;
       await gladys.setConnectionStatus(status.connected, status.message);
     }
+  }
+
+  /** True when every configured station got a server error (5xx) at its last read. */
+  function allServerErrors(config) {
+    const results = hub.units(config).map((id) => hub.lastResults.get(id));
+    return results.length > 0 && results.every((result) => result?.serverError);
   }
 
   /** One info line describing the config. */

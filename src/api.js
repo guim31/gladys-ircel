@@ -35,6 +35,11 @@ export const POLLUTANT_BY_PHENOMENON = {
 const TO_MICROGRAMS = { 'µg/m³': 1, 'mg/m³': 1000 };
 
 export class ApiError extends Error {
+  /** A server error (5xx): the service is down when every station gets one. */
+  get serverError() {
+    return this.status >= 500;
+  }
+
   /**
    * @param {string} message
    * @param {{ status?: number, unreachable?: boolean }} [details]
@@ -65,11 +70,7 @@ async function getJson(path, { fetch: fetchImpl = globalThis.fetch } = {}) {
     throw new ApiError(`IRCEL API unreachable (${reason})`, { unreachable: true });
   }
   if (!response.ok) {
-    // A server error is the service down for every station, like no answer.
-    throw new ApiError(`IRCEL API: HTTP ${response.status}`, {
-      status: response.status,
-      unreachable: response.status >= 500,
-    });
+    throw new ApiError(`IRCEL API: HTTP ${response.status}`, { status: response.status });
   }
   try {
     return await response.json();

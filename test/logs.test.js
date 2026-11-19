@@ -68,7 +68,7 @@ test('one station failing alone: said once, and its return', async (t) => {
   const w = await createWorld({ config: { stations: `${GENT},${BRUSSEL}` } });
   await createAll(w);
   const before = lines.length;
-  w.network.series[GENT] = { status: 404 };
+  w.network.series[GENT] = { status: 500 };
   for (let i = 0; i < 4; i += 1) {
     w.advance(HOUR);
     await w.app.poller.cycle();
@@ -78,6 +78,6 @@ test('one station failing alone: said once, and its return', async (t) => {
   await w.app.poller.cycle();
   const logged = lines.slice(before);
   assert.equal(logged.length, 2, logged.join('\n'));
-  assert.match(logged[0], /\[WARN\].*IRCEL Gent \(44R701\): IRCEL API: HTTP 404/);
+  assert.match(logged[0], /\[WARN\].*IRCEL Gent \(44R701\): IRCEL API: HTTP 500/);
   assert.match(logged[1], /\[INFO\].*IRCEL Gent \(44R701\): read again/);
 });
